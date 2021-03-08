@@ -9,50 +9,53 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 
 <body>
-<header>
-    <h1>Welcome to Vet Tech!!!</h1>
-    <img src="{% static 'images/dogLookingatUs.jpg' %}" alt="">
-</header>
-{% if messages %}
-{% for message in messages %}
-<p style="color: red;">{{message}}</p>
-{% endfor %}
-{% endif %}
+    <header>
+        <img src="{% static 'static/images/dogLookingatUs.jpg' %}" alt="">
+        <h1>Welcome to Vet Tech!!!</h1>
+        <img src="{% static 'images/dogLookingatUs.jpg' %}" alt="">
+    </header>
+    {% if messages %}
+    {% for message in messages %}
+    <p style="color: red;">{{message}}</p>
+    {% endfor %}
+    {% endif %}
 
-<section>
-    <nav>
-        <h1>Login</h1>
-        <form action="/login" method="post">
-            {% csrf_token %}
-            <p>Email: <input type="text" name="email" id=""></p>
-            <p>Password: <input type="text" name="password" id=""></p>
-            <input type="submit" value="Log In">
-        </form>
-    </nav>
+    <section>
+        <nav>
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                {% csrf_token %}
+                <p>Email: <input type="text" name="email" id=""></p>
+                <p>Password: <input type="text" name="password" id=""></p>
+                <input type="submit" value="Log In">
+            </form>
+        </nav>
 
-    
 
-    <article>
-        <h1>Registration</h1>
-        <form action="/register" method="post">
-            {% csrf_token %}
-            <p>First Name: <input type="text" name="firstname" id=""></p>
-            <p>Last Name: <input type="text" name="lastname" id=""></p>
-            <p>Email: <input type="text" name="email" id=""></p>
-            <p>Password: <input type="text" name="password" id=""></p>
-            <p>Confirm Password: <input type="text" name="confirmpassword" id=""></p>
-            <p>Birthday: <input type="date" name="birthday" id=""></p>
-            <input type="submit" value="Register">
-        </form>
-    </article>
-</section>
 
-<footer>
-    <p>We make life a little easier for you and your pets</p>
-</footer>
+        <article>
+            <h1>Registration</h1>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <p>First Name: <input type="text" name="firstname" id=""></p>
+                <p>Last Name: <input type="text" name="lastname" id=""></p>
+                <p>Email: <input type="text" name="email" id=""></p>
+                <p>Password: <input type="text" name="password" id=""></p>
+                <p>Confirm Password: <input type="text" name="confirmpassword" id=""></p>
+                <p>Birthday: <input type="date" name="birthday" id=""></p>
+                <input type="submit" value="Register">
+            </form>
+        </article>
+    </section>
+
+    <footer>
+        <p>We make life a little easier for you and your pets</p>
+    </footer>
 </body>
 
 </html>
